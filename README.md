@@ -11,7 +11,8 @@ Ele não contém código-fonte de serviços específicos, mas agrupa informaçõ
 
 1. [Arquitetura](#arquitetura)  
 2. [Serviços Principais](#serviços-principais)  
-3. [Tecnologias](#tecnologias)  
+3. [Tecnologias](#tecnologias)
+4. [Como Rodar no cluster microk8s local](#como-rodar-no-cluster-microk8s-local)
 4. [Como Rodar Localmente](#como-rodar-localmente)  
 
 
@@ -110,4 +111,75 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 
 
 ---
+## Como Rodar no cluster microk8s local
+
+Atualmente, o MCABank possui um **cluster local** baseado em MicroK8s, com Argo CD para GitOps e pipelines de CI/CD via GitHub Actions. O fluxo de desenvolvimento e deploy funciona da seguinte forma:
+
+---
+
+### Infraestrutura do Cluster
+
+- **Cluster local:** MicroK8s  
+- **Gerenciamento de deploys:** Argo CD  
+- **CI/CD:** GitHub Actions detecta alterações nos repositórios, builda imagens Docker e atualiza automaticamente os manifests no Argo CD  
+- **Serviços no cluster:**  
+  - MCABankAuth  
+  - MCABankCustomer  
+  - MCABankPayment  
+  - MCABankGateway  
+  - MCABankFrontEnd  
+- **Infraestrutura compartilhada:**  
+  - MySQL  
+  - LocalStack (SQS)  
+- **Observabilidade e logs:** via kubectl logs e futuros planos para Jaeger/Grafana
+
+---
+
+### Como funciona o fluxo de deploy
+
+1. Ao fazer um **commit/push** no repositório Git.  
+2. O **GitHub Actions pipeline**:
+   - Builda a imagem Docker do serviço modificado
+   - Roda os testes e validação de codigo estática
+   - Publica imagem do container no DockerHub
+3. O **Argo CD** detecta automaticamente a mudança no repositório Git.  
+4. Argo CD aplica os manifests atualizados no cluster, sincronizando os serviços.  
+5. Os pods são atualizados sem necessidade de intervenção manual, garantindo **GitOps completo**.  
+
+---
+
+## Como Rodar Localmente
+
+Para desenvolvimento local simples (sem usar Kubernetes), você pode rodar apenas os serviços de infraestrutura com **Docker Compose** e executar os microsserviços manualmente.
+
+### Pré-requisitos
+- [Go](https://go.dev/doc/install) ≥ 1.22  
+- [Node.js](https://nodejs.org/en/download) ≥ 20  
+- [Angular CLI](https://angular.dev/tools/cli) ≥ 17  
+- [Docker](https://docs.docker.com/get-docker/)  
+- [Docker Compose](https://docs.docker.com/compose/install/)  
+- [Git](https://git-scm.com/downloads)  
+
+### Passos
+
+1. **Clone os repositórios necessários**
+   ```bash
+   git clone https://github.com/rasteiro11/MCABank
+   cd MCABank/
+   git clone https://github.com/rasteiro11/MCABankAuth
+   git clone https://github.com/rasteiro11/MCABankCustomer
+   git clone https://github.com/rasteiro11/MCABankPayment
+   git clone https://github.com/rasteiro11/MCABankGateway
+   git clone https://github.com/rasteiro11/MCABankProtobuff
+   git clone https://github.com/rasteiro11/MCABankFrontEnd
+   git clone https://github.com/rasteiro11/PogCore
+   ```
+
+2. **Subir os serviços de infraestrutura**
+Entre no diretório e rode o script:  
+```bash
+    cd LocalInfra/
+    bash run_services.sh
+```
+
 
