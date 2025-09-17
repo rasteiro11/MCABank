@@ -32,11 +32,8 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 
 ### Diagramas
 
-Arquitetura geral:  
+**Arquitetura geral**:  
 ![Arquitetura do MCABank](docs/MCABANKLOCALCLUSTER.png)
-
-Fluxo de CI/CD:  
-![Pipeline CI/CD](docs/MCACICD.png)
 ---
 
 ## Serviços Principais
@@ -141,7 +138,8 @@ Atualmente, o MCABank possui um **cluster local** baseado em MicroK8s, com Argo 
 ---
 
 ### Como funciona o fluxo de deploy
-
+**Fluxo de CI/CD**:  
+![Pipeline CI/CD](docs/MCACICD.png)
 1. Ao fazer um **commit/push** no repositório Git.  
 2. O **GitHub Actions pipeline**:
    - Builda a imagem Docker do serviço modificado
