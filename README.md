@@ -30,8 +30,13 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 - Definições de contratos em Protobuff para comunicação eficiente  
 - Frontend web integrado aos serviços  
 
-> Um diagrama da arquitetura pode ser adicionado em [`docs/architecture.png`](docs/architecture.png).  
+### Diagramas
 
+Arquitetura geral:  
+![Arquitetura do MCABank](docs/MCABANKLOCALCLUSTER.png)
+
+Fluxo de CI/CD:  
+![Pipeline CI/CD](docs/MCACICD.png)
 ---
 
 ## Serviços Principais
