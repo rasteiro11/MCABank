@@ -79,6 +79,7 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 - **ArgoCD** – GitOps para deploy contínuo.
 - **ConfigMaps / Secrets** – Gestão de configuração e credenciais por serviço.
 - **DockerHub** – Registry das imagens Docker geradas.
+- **Jeager** – Coleta, armazena e visualiza traces.
 
 ### Autenticação e Segurança
 - **JWT** – Tokens de autenticação.
