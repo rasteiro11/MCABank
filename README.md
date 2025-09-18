@@ -32,8 +32,12 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 
 ### Diagramas
 
-**Arquitetura geral**:  
-![Arquitetura do MCABank](docs/MCABANKLOCALCLUSTER.png)
+**Arquitetura Atual**:  
+![Arquitetura Atual do MCABank](docs/MCABANKLOCALCLUSTER.png)
+---
+
+**Arquitetura Futura**:  
+![Arquitetura Futura do MCABank](docs/MCABANKPROD.png)
 ---
 
 ## Serviços Principais
