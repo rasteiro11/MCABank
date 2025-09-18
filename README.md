@@ -87,10 +87,9 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 - **GitHub Actions** – Build, testes e publicação de imagens.
 - **GitOps** – Deploy e sincronização do estado do cluster via ArgoCD.
 
-### Observabilidade (planejado / opcional)
+### Observabilidade
 - **Jaeger** – Planejado para tracing distribuído entre microsserviços.  
-- **Grafana** – Planejado para visualização de métricas e dashboards.  
-- **OpenTelemetry** – Planejado para coleta unificada de métricas, traces e logs distribuídos.
+- **OpenTelemetry** – Coleta unificada de métricas, traces e logs distribuídos.
 
 ---
 
@@ -102,7 +101,7 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 - **Estrutura de repositórios modular** – cada serviço mantém sua própria configuração de infraestrutura (manifests, ConfigMaps, Secrets).  
 - **CI/CD automatizado e GitOps** – pipelines para build, testes e deploy via ArgoCD.  
 - **Mensageria assíncrona** – uso de filas (SQS) para eventos desacoplados entre serviços.  
-- **Rastreabilidade e observabilidade planejadas** – integração futura com OpenTelemetry, Jaeger e Grafana.  
+- **Rastreabilidade e observabilidade** – integração com OpenTelemetry e Jaeger.  
 - **Testes automatizados** – unitários.  
 - **Documentação de APIs com Swagger** – padronização e fácil integração entre serviços e com clientes.  
 - **Utilização de um core para desenvolvimento de microsserviços** – todos os serviços Go utilizam o **PogCore** para padronização de middlewares, logging, tracing, validação e integração com filas/DB, garantindo consistência entre microsserviços.  
@@ -116,7 +115,7 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 - **Escalabilidade** – microsserviços isolados e deploys independentes permitem escalar apenas o que é necessário.  
 - **Manutenção simplificada** – repositórios modulares e PogCore padronizam desenvolvimento e reduzem duplicação de código.  
 - **Segurança aprimorada** – autenticação via JWT e gerenciamento de segredos via Kubernetes Secrets garantem proteção de dados sensíveis.  
-- **Rastreabilidade e monitoramento** – integração futura com OpenTelemetry, Jaeger e Grafana permitirá identificar problemas rapidamente.  
+- **Rastreabilidade e monitoramento** – integração com OpenTelemetry e Jaeger permite identificar problemas rapidamente.  
 - **Padronização de APIs** – contratos Protobuf e documentação Swagger facilitam integração entre serviços e com clientes.  
 - **Confiabilidade** – pipelines CI/CD, testes unitários e GitOps reduzem risco de falhas em produção e possibilitam rollbacks rápidos.  
 - **Desacoplamento e resiliência** – mensageria assíncrona (SQS) desacopla serviços, tornando o sistema mais robusto frente a indisponibilidades momentâneas.
@@ -143,7 +142,7 @@ Atualmente, o MCABank possui um **cluster local** baseado em MicroK8s, com Argo 
 - **Infraestrutura compartilhada:**  
   - MySQL  
   - LocalStack (SQS)  
-- **Observabilidade e logs:** via kubectl logs e futuros planos para Jaeger/Grafana
+- **Observabilidade e logs:** via kubectl logs e Jaeger com OpenTelemetry
 
 ---
 
