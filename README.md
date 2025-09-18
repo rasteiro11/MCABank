@@ -80,6 +80,12 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 - **ConfigMaps / Secrets** – Gestão de configuração e credenciais por serviço.
 - **DockerHub** – Registry das imagens Docker geradas.
 - **Jeager** – Coleta, armazena e visualiza traces.
+- 
+**Argo Local**:  
+![Argo Local](docs/ARGO.png)
+
+**Jeager Local**:  
+![Jeager Local](docs/JEAGER.png)
 
 ### Autenticação e Segurança
 - **JWT** – Tokens de autenticação.
