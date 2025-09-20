@@ -32,8 +32,11 @@ Ele não contém código-fonte de serviços específicos, mas agrupa informaçõ
 
 5. [Como Rodar Localmente](#como-rodar-localmente)  
    5.1 [Pré-requisitos](#pré-requisitos)  
-   5.2 [Passos](#passos)  
+   5.2 [Passos](#passos)
+    
+6. [Gerador de Swagger Automático](#gerador-de-swagger-automático)  
 
+7. [Testes Unitários](#testes-unitários)  
 
 ---
 
@@ -218,5 +221,31 @@ Entre no diretório e rode o script:
     cd LocalInfra/
     bash run_services.sh
 ```
+---
 
+## Gerador de Swagger Automático
 
+1. Entre no diretório da aplicação:
+   ```bash
+   cd <diretório-da-aplicação>
+   ```
+2. Execute:
+   ```bash
+   swag init -g ./cmd/main.go -o docs
+   ```
+3. Após iniciar a aplicação, acesse a documentação Swagger pelo navegador em:
+   ```
+   http://<host>:<porta>/swagger/index.html
+   ```
+---
+
+## Testes Unitários
+
+1. Gere os mocks e códigos necessários:
+   ```bash
+   go generate ./...
+   ```
+2. Execute os testes:
+   ```bash
+   go test ./...
+   ```
