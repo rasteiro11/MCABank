@@ -107,13 +107,12 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 - **Versionamento de contratos (Protobuf) e imagens Docker** – garante rastreabilidade e compatibilidade entre serviços.  
 - **Estrutura de repositórios modular** – cada serviço mantém sua própria configuração de infraestrutura (manifests, ConfigMaps, Secrets).  
 - **CI/CD automatizado e GitOps** – pipelines para build, testes e deploy via ArgoCD.  
-- **Mensageria assíncrona** – uso de filas (SQS) para eventos desacoplados entre serviços.  
+- **Mensageria assíncrona** – uso de filas (SQS) para robustez.  
 - **Rastreabilidade e observabilidade** – integração com OpenTelemetry e Jaeger.  
 - **Testes automatizados** – unitários.  
 - **Documentação de APIs com Swagger** – padronização e fácil integração entre serviços e com clientes.  
 - **Utilização de um core para desenvolvimento de microsserviços** – todos os serviços Go utilizam o **PogCore** para padronização de middlewares, logging, tracing, validação e integração com filas/DB, garantindo consistência entre microsserviços.  
 - **Boas práticas de segurança** – autenticação via JWT, segredos gerenciados via Kubernetes Secrets.  
-- **Documentação centralizada** – README e diagramas de arquitetura atualizados, facilitando onboarding e manutenção.
 
 ---
 
@@ -125,7 +124,7 @@ O MCABank é dividido em múltiplos serviços independentes que se comunicam ent
 - **Rastreabilidade e monitoramento** – integração com OpenTelemetry e Jaeger permite identificar problemas rapidamente.  
 - **Padronização de APIs** – contratos Protobuf e documentação Swagger facilitam integração entre serviços e com clientes.  
 - **Confiabilidade** – pipelines CI/CD, testes unitários e GitOps reduzem risco de falhas em produção e possibilitam rollbacks rápidos.  
-- **Desacoplamento e resiliência** – mensageria assíncrona (SQS) desacopla serviços, tornando o sistema mais robusto frente a indisponibilidades momentâneas.
+- **Desacoplamento e resiliência** – mensageria assíncrona (SQS) tornando o sistema mais robusto frente a indisponibilidades momentâneas.
 
 
 ---
