@@ -10,10 +10,29 @@ Ele não contém código-fonte de serviços específicos, mas agrupa informaçõ
 ## Índice
 
 1. [Arquitetura](#arquitetura)  
+   1.1 [Principais características](#principais-características)  
+   1.2 [Diagramas](#diagramas)  
+
 2. [Serviços Principais](#serviços-principais)  
-3. [Tecnologias](#tecnologias)
-4. [Como Rodar no cluster microk8s local](#como-rodar-no-cluster-microk8s-local)
-4. [Como Rodar Localmente](#como-rodar-localmente)  
+
+3. [Tecnologias](#tecnologias)  
+   3.1 [Linguagens e Frameworks](#linguagens-e-frameworks)  
+   3.2 [Banco de Dados](#banco-de-dados)  
+   3.3 [Mensageria e Filas](#mensageria-e-filas)  
+   3.4 [Infraestrutura](#infraestrutura)  
+   3.5 [Autenticação e Segurança](#autenticação-e-segurança)  
+   3.6 [CI/CD e DevOps](#cicd-e-devops)  
+   3.7 [Observabilidade](#observabilidade)  
+   3.8 [Boas práticas e padrões](#boas-práticas-e-padrões)  
+   3.9 [Benefícios das boas práticas](#benefícios-das-boas-práticas)  
+
+4. [Como Rodar no Cluster MicroK8s Local](#como-rodar-no-cluster-microk8s-local)  
+   4.1 [Infraestrutura do Cluster](#infraestrutura-do-cluster)  
+   4.2 [Fluxo de Deploy](#fluxo-de-deploy)  
+
+5. [Como Rodar Localmente](#como-rodar-localmente)  
+   5.1 [Pré-requisitos](#pré-requisitos)  
+   5.2 [Passos](#passos)  
 
 
 ---
